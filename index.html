@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="/dist/output.css" rel="stylesheet">
+
   </head>
   <body>
     <nav class="bg-white shadow">
@@ -160,8 +161,32 @@
     <!-- Container for the Habit Tracker -->
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <!-- Content goes here -->
-      This is the container for the Habit Tracker
+      This is the container for the Habit Trackerz
+      <div class="h-100 w-full flex items-center justify-center bg-teal-lightest font-sans mt-20">
+        <div class="bg-white rounded shadow p-6 m-4 w-full lg:w-3/4 lg:max-w-lg">
+          <div class="mb-4">
+            <h1 class="text-3xl md:text-4xl text-indigo-600 font-medium mb-2">
+              The Things
+            </h1>
+            <div class="overflow-y-auto max-h-80">
+              <div id="listBox"></div>
+              <div class="flex mt-4">
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-darker" name="text"
+                  id="text" placeholder="Add Thing" />
+                <input type="hidden" id="saveIndex" />
+                <button
+                  class="p-2 lg:px-4 md:mx-2 text-center border border-solid border-indigo-600 rounded text-white bg-indigo-600 transition-colors duration-300 mt-1 md:mt-0 md:ml-1"
+                  id="add-task-btn">Add</button>
+                <button
+                  class="p-2 lg:px-4 md:mx-2 text-center border border-solid border-indigo-600 rounded bg-indigo-600 text-white transition-colors duration-300 mt-1 md:mt-0 md:ml-1"
+                  style="display: none" id="save-todo-btn">Edit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
     <div class="relative">
       <div class="absolute inset-0 flex items-center" aria-hidden="true">
         <div class="w-full border-t border-gray-300"></div>
@@ -170,5 +195,6 @@
         <span class="bg-white pr-3 text-base font-semibold leading-6 text-gray-900">Data Viz</span>
       </div>
     </div>
+    <script src="main.js"></script>
   </body>
 </html>
