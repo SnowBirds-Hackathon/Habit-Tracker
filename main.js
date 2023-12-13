@@ -29,22 +29,31 @@ function displayTodo() {
 
   let htmlCode = ''
 
+  const todayNumber = () => {
+    const todayDate = new Date()
+    const todayDay = todayDate.getDay() //0-6
+    return todayDay
+  }
+
   todoArray.forEach((list, ind) => {
-    console.log('list: ', list, 'index: ', ind)
+    // console.log('list: ', list, 'index: ', ind)
+
     htmlCode += `<div class='flex mb-4 items-center'>
     <div class='w-1/3 flex items-center justify-start border border-grey-500 rounded-full h-auto'>
-        <p class='w-full text-gray-600 m-1 line-clamp-1 flex-wrap overflow-hidden hover:overflow-visible hover:line-clamp-4 font-excalidraw text-lg pl-2' >${list.habit}</p>
+        <p class='w-2/3 text-gray-600 m-1 line-clamp-1 flex-wrap overflow-hidden hover:overflow-visible hover:break-inside-auto hover:line-clamp-4 font-excalidraw text-lg pl-2' >${
+          list.habit
+        }</p>
             <button onclick='edit(${ind})' class= 'h-8 w-8 fa-solid fa-pen-to-square text-green-600' ></button>
             <button onclick='deleteTodo(${ind})' class='h-8 w-8 mr-2 fa-solid fa-trash-can text-red-500'></button>
     </div>
     <div class='w-2/3 flex gap-x-2 justify-around items-center'>
-        <input id="sunday${ind}" ${list.days.sunday ? 'checked' : ''} onclick='toggleDay(${ind})' type="checkbox" value="" class="h-8 w-8 m-1 rounded-full">
+        <input id="sunday${ind}" ${list.days.sunday ? 'checked' : ''} onclick='toggleDay(${ind})' type="checkbox" value="sunday" class="h-8 w-8 m-1 rounded-full">
         <input id="monday${ind}" type="checkbox" value="monday" ${list.days.monday ? 'checked' : ''} onclick='toggleDay(${ind})' class="h-8 w-8 m-1 pl-2 rounded-full ">
-        <input id="tuesday${ind}" ${list.days.tuesday ? 'checked' : ''} onclick='toggleDay(${ind})' type="checkbox" value="" class="h-8 w-8 m-1 rounded-full">
-        <input id="wednesday${ind}" ${list.days.wednesday ? 'checked' : ''} onclick='toggleDay(${ind})' type="checkbox" value="" class="h-8 w-8 m-1 rounded-full">
-        <input id="thursday${ind}" ${list.days.thursday ? 'checked' : ''} onclick='toggleDay(${ind})' type="checkbox" value="" class="h-8 w-8 m-1 rounded-full">
-        <input id="friday${ind}" ${list.days.friday ? 'checked' : ''} onclick='toggleDay(${ind})' type="checkbox" value="" class="h-8 w-8 m-1 rounded-full ml-2">
-        <input id="saturday${ind}" ${list.days.saturday ? 'checked' : ''} onclick='toggleDay(${ind})' type="checkbox" value="" class="h-8 w-8 m-1 rounded-full">
+        <input id="tuesday${ind}" ${list.days.tuesday ? 'checked' : ''} onclick='toggleDay(${ind})' type="checkbox" value="tuesday" class="h-8 w-8 m-1 rounded-full">
+        <input id="wednesday${ind}" ${list.days.wednesday ? 'checked' : ''} onclick='toggleDay(${ind})' type="checkbox" value="wednesday" class="h-8 w-8 m-1 rounded-full">
+        <input id="thursday${ind}" ${list.days.thursday ? 'checked' : ''} onclick='toggleDay(${ind})' type="checkbox" value="thursday" class="h-8 w-8 m-1 rounded-full">
+        <input id="friday${ind}" ${list.days.friday ? 'checked' : ''} onclick='toggleDay(${ind})' type="checkbox" value="friday" class="h-8 w-8 m-1 rounded-full ml-2">
+        <input id="saturday${ind}" ${list.days.saturday ? 'checked' : ''} onclick='toggleDay(${ind})' type="checkbox" value="saturday" class="h-8 w-8 m-1 rounded-full">
     </div>    
    </div>`
   })

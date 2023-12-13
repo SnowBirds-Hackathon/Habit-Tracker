@@ -7,20 +7,19 @@
     <link href="/dist/output.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/2bca696cf0.js" crossorigin="anonymous"></script>
   </head>
+
   <body class="min-w-[768px]  bg-repeat-x bg-cover"
     style="background-image: url(https://mywandergirllife.files.wordpress.com/2017/07/lis-fb.gif)">
 
     <section class="header">
       <div class="flex flex-row justify-between p-4 w-full space-x-40 bg-transparent">
-        <div class=" w-40  border-double rounded-lg h-1/2">
+        <div class="w-40 border-double rounded-lg h-1/2">
           <img class="" src="/assets/snowbird-logo.png" alt="snowbird-logo">
         </div>
         <div class=" h-1/2 p-2 cursor-pointer border-2 border-double rounded-lg" id="gitHub">
-          <a href="https://github.com/SnowBirds-Hackaton/SnowBirds-Habit-Tracker">
+          <a target="_blank" href="https://github.com/SnowBirds-Hackaton/SnowBirds-Habit-Tracker">
             <button class=" fa-6x fa-brands fa-github "></button>
           </a>
-
-
         </div>
       </div>
     </section>
@@ -67,16 +66,18 @@
                 <h3 class="text-lg font-excalidraw">Sat</h3>
               </div>
             </div>
-            <div class="overflow-y-auto max-h-80 scrollbar">
+            <div class="overflow-y-auto max-h-80 [&::-webkit-scrollbar]:display:none scrollbar-width: none">
               <div id="listBox"> </div>
             </div>
             <div class="flex mt-4">
               <!-- input box for habits -->
               <div class=" w-1/3 shadow appearance-none flex justify-between border rounded text-grey-darker bg-white">
-                <input class="font-excalidraw text-lg pl-2" name="text" id="text" placeholder="Add Thing" />
+                <input class="font-excalidraw text-lg pl-2" name="text" id="text" size="20" maxlength="55"
+                  placeholder="Add Thing" />
                 <input type="hidden" id="saveIndex" />
-                <button class="h-8 w-8 m-1 fa-solid fa-mug-hot -ml-5 bg-opacity-0" id="add-task-btn"></button>
-                <button class="h-8 w-8 m-1 border rounded" style="display: none" id="save-todo-btn">Edit</button>
+                <button class="h-8 w-8 fa-solid fa-mug-hot -ml-5 bg-opacity-0" id="add-task-btn"></button>
+                <button class="h-8 w-8 fa-solid fa-screwdriver-wrench -ml-5 mr-1 bg-opacity-0" style="display: none"
+                  id="save-todo-btn"></button>
               </div>
 
             </div>
@@ -89,7 +90,7 @@
 
       <footer>
         <div class="flex justify-center">
-          <div class="fixed place-items-center bottom-0 bg-0 rounded-lg shadow">
+          <div class="static place-items-center bottom-0 bg-0 rounded-lg shadow">
             <span class="font-excalidraw text-2xl font-semibold whitespace-nowrap dark:text-black">
               SnowBirds
               |
@@ -98,6 +99,7 @@
               2023</span>
           </div>
         </div>
+
       </footer>
 
 
