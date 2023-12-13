@@ -18,7 +18,7 @@ function displayTodo() {
   let htmlCode = ''
   todoArray.forEach((list, ind) => {
     htmlCode += `<div class='flex mb-4 items-center'>
-    <div class='w-1/3 border border-gray-900 flex'>
+    <div class='w-1/3 border border-gray-900 flex rounded-full'>
         <p class='w-full text-grey-darkest' >${list}</p>
         <button onclick='edit(${ind})' class='border border-green-500 h-8 w-8'>Edit</button>
         <button onclick='deleteTodo(${ind})' class='border border-red-500 h-8 w-8'>X</button>
@@ -80,3 +80,19 @@ saveTaskButton.addEventListener('click', () => {
   localStorage.setItem('todo', JSON.stringify(todoArray))
   displayTodo()
 })
+
+/* -- Glow effect -- */
+
+const blob = document.getElementById('blob')
+
+window.onpointermove = (event) => {
+  const { clientX, clientY } = event
+
+  blob.animate(
+    {
+      left: `${clientX}px`,
+      top: `${clientY}px`,
+    },
+    { duration: 3000, fill: 'forwards' }
+  )
+}
