@@ -5,7 +5,10 @@ const listBox = document.getElementById('listBox')
 const saveInd = document.getElementById('saveIndex')
 const currentStreak = document.getElementById('streaks_text')
 let streakcount = 0
-let toggle = false
+
+
+
+
 const dayDictionary = {
   0: 'sunday',
   1: 'monday',
@@ -64,10 +67,6 @@ function displayTodo() {
   })
 }
 
-if (toggle == true) {
-  streakcount += 1
-  currentStreak.innerHTML = streakcount
-}
 
 
 function toggleDay(day, ind) {
@@ -86,6 +85,21 @@ function toggleDay(day, ind) {
   }
 }
 currentStreak.innerHTML = streakcount
+
+let streaks = []
+displayStreaks()
+
+function displayStreaks() {
+  let Streaks = localStorage.getItem('streakcount')
+  if (streakcount === null) {
+    streakArray = []
+  } else {
+    let pasrsedStreak = JSON.parse(Streaks)
+    streakArray = pasrsedStreak
+  }
+}
+
+
 
 addTaskButton.addEventListener('click', (e) => {
   e.preventDefault()
@@ -124,6 +138,7 @@ addTaskButton.addEventListener('click', (e) => {
   habit.value = ''
   localStorage.setItem('todo', JSON.stringify(todoArray))
   displayTodo()
+  displayStreaks()
 })
 
 function deleteTodo(ind) {
@@ -132,6 +147,7 @@ function deleteTodo(ind) {
   todoArray.splice(ind, 1)
   localStorage.setItem('todo', JSON.stringify(todoArray))
   displayTodo()
+  displayStreaks()
 }
 
 function edit(ind) {
@@ -153,6 +169,9 @@ saveTaskButton.addEventListener('click', () => {
   habit.value = ''
   localStorage.setItem('todo', JSON.stringify(todoArray))
   displayTodo()
+displayStreaks()
+
+  
 })
 
 /* -- Glow effect -- */
@@ -170,4 +189,3 @@ window.onpointermove = (event) => {
     { duration: 3000, fill: 'forwards' }
   )
 }
-console.log(currentStreak + 2)
