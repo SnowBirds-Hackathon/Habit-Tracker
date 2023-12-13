@@ -2,9 +2,10 @@
 module.exports = {
   content: ['./**/*.{html,js}'],
   theme: {
+    fontFamily: {
+      codedex: ['Fira-code', 'Hack','sans-pro'],
     extend: {
-      fontFamily: {
-        codedex: ['Fira', 'sans-serif'],
+      
         keyframes: {
           rotate: {
             from: {

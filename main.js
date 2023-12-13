@@ -41,10 +41,10 @@ function displayTodo() {
   todoArray.forEach((list, ind) => {
     console.log('list: ', list, 'index: ', ind)
     htmlCode += `<div class='flex mb-4 items-center gap-5'>
-    <div class='w-1/3 flex items-center justify-start gap-2 border border-grey-500 rounded-full'>
-        <p class='w-full habit-grey-darkest m-1 line-clamp-1 overflow-hidden bg-sky-500 hover:bg-sky-700' >${list.habit}</p>
-        <button onclick='edit(${ind})' class='border border-green-500 h-8 w-8 '>Edit</button>
-        <button onclick='deleteTodo(${ind})' class='border border-red-500 h-8 w-8 mr-2 '>X</button>
+    <div class='w-1/3 flex items-center justify-start gap-2 border-2 border-grey-500 rounded-lg bg-indigo-500'>
+        <p class=' border-2 rounded-lg w-full habit-grey-darkest m-1 line-clamp-1 overflow-hidden bg-sky-500 hover:bg-sky-700' >${list.habit}</p>
+        <button onclick='edit(${ind})' class='border-2 rounded-lg border-green-500 h-8 w-8 '>Edit</button>
+        <button onclick='deleteTodo(${ind})' class='border-2 rounded-lg border-red-500 h-8 w-8 mr-2 '>X</button>
     </div>
 
     <div class='w-2/3 flex gap-2 items-center'>
