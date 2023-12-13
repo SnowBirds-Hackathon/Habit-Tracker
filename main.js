@@ -3,7 +3,9 @@ const addTaskButton = document.getElementById('add-task-btn')
 const saveTaskButton = document.getElementById('save-todo-btn')
 const listBox = document.getElementById('listBox')
 const saveInd = document.getElementById('saveIndex')
-
+const currentStreak = document.getElementById('streaks_text')
+let streakcount = 0
+let toggle = false
 const dayDictionary = {
   0: 'sunday',
   1: 'monday',
@@ -45,6 +47,8 @@ function displayTodo() {
         <input id="thursday${ind}" ${list.days.thursday ? 'checked' : ''} onclick='toggleDay(${ind})' type="checkbox" value="" class="h-8 w-8 m-1 rounded-full">
         <input id="friday${ind}" ${list.days.friday ? 'checked' : ''} onclick='toggleDay(${ind})' type="checkbox" value="" class="h-8 w-8 m-1 rounded-full ml-2">
         <input id="saturday${ind}" ${list.days.saturday ? 'checked' : ''} onclick='toggleDay(${ind})' type="checkbox" value="" class="h-8 w-8 m-1 rounded-full">
+       
+        </div>
     </div>    
    </div>`
   })
@@ -54,16 +58,34 @@ function displayTodo() {
   todoArray.forEach((list, ind) => {
     Object.values(dayDictionary).forEach((day) => {
       const checkbox = document.getElementById(`${day}${ind}`)
-      checkbox.addEventListener('change', () => toggleDay(day, ind))
+       checkbox.addEventListener('change', () => toggleDay(day, ind))
+          
     })
   })
 }
+
+if (toggle == true) {
+  streakcount += 1
+  currentStreak.innerHTML = streakcount
+}
+
+
 function toggleDay(day, ind) {
   if (todoArray) {
     todoArray[ind].days[day] = !todoArray[ind].days[day]
     localStorage.setItem('todo', JSON.stringify(todoArray))
+    
+    if (todoArray[ind].days[day] == true) {
+      streakcount += 1
+      currentStreak.innerHTML = streakcount
+    } else {
+      streakcount -= 1
+      currentStreak.innerHTML = streakcount
+    }
+  
   }
 }
+currentStreak.innerHTML = streakcount
 
 addTaskButton.addEventListener('click', (e) => {
   e.preventDefault()
@@ -148,3 +170,4 @@ window.onpointermove = (event) => {
     { duration: 3000, fill: 'forwards' }
   )
 }
+console.log(currentStreak + 2)

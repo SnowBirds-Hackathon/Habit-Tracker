@@ -70,15 +70,27 @@
             <div class="overflow-y-auto max-h-80 scrollbar">
               <div id="listBox"> </div>
             </div>
-            <div class="flex mt-4">
+            <div class="flex flex-c mt-4">
               <!-- input box for habits -->
               <div class=" w-1/3 shadow appearance-none flex justify-between border rounded text-grey-darker bg-white">
                 <input class="font-excalidraw text-lg pl-2" name="text" id="text" placeholder="Add Thing" />
                 <input type="hidden" id="saveIndex" />
                 <button class="h-8 w-8 m-1 fa-solid fa-mug-hot -ml-5 bg-opacity-0" id="add-task-btn"></button>
                 <button class="h-8 w-8 m-1 border rounded" style="display: none" id="save-todo-btn">Edit</button>
-              </div>
 
+                
+              </div>
+              <div id='streaks-container'
+              class="bg-gradient-to-r border-2 from-cyan-200 to-purple-600 mx-auto rounded-lg shadow  ">
+                  <h1 id= "streaks_text"
+                    class="font-excalidraw w-2 bg-gradient-to-r from-purple-600 to-cyan-300 font-codedex text-4xl text-black font-medium  
+                    shadow appearance-none border rounded text-grey-darker fa-solid fa-fire">
+                  0
+                  </h1>
+              
+                   
+                  </div>
+                </div>
             </div>
           </div>
         </div>
