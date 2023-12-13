@@ -17,22 +17,13 @@ const dayDictionary = {
 let todoArray = []
 displayTodo()
 
-// goal: persist the days of the week in local storage
-// goal: count the number of days streak
-// todo create an object with habits, etc
-//
-
 function displayTodo() {
   let todo = localStorage.getItem('todo')
-  let parsedTodo = JSON.parse(todo)
-  console.log(parsedTodo)
-  for (let i = 0; i < parsedTodo.length; i++) {
-    console.log(parsedTodo[i])
-  }
-
   if (todo === null) {
     todoArray = []
   } else {
+    let parsedTodo = JSON.parse(todo)
+
     todoArray = parsedTodo
   }
 
@@ -41,37 +32,55 @@ function displayTodo() {
   todoArray.forEach((list, ind) => {
     console.log('list: ', list, 'index: ', ind)
     htmlCode += `<div class='flex mb-4 items-center gap-5'>
-    <div class='w-1/3 flex items-center justify-start gap-2 border-2 border-grey-500 rounded-lg bg-indigo-500'>
-        <p class=' border-2 rounded-lg w-full habit-grey-darkest m-1 line-clamp-1 overflow-hidden bg-sky-500 hover:bg-sky-700' >${list.habit}</p>
-        <button onclick='edit(${ind})' class='border-2 rounded-lg border-green-500 h-8 w-8 '>Edit</button>
-        <button onclick='deleteTodo(${ind})' class='border-2 rounded-lg border-red-500 h-8 w-8 mr-2 '>X</button>
+    <div class='w-1/3 flex items-center justify-start gap-2 border border-grey-500 rounded-full h-auto'>
+        <p class='w-full text-gray-600 m-1 line-clamp-1 flex-wrap overflow-hidden hover:overflow-visible hover:line-clamp-4 font-excalidraw text-lg pl-2' >${list.habit}</p>
+            <button onclick='edit(${ind})' class= 'h-8 w-8 fa-solid fa-pen-to-square text-green-600' ></button>
+            <button onclick='deleteTodo(${ind})' class='h-8 w-8 mr-2 fa-solid fa-trash-can text-red-500'></button>
     </div>
-
     <div class='w-2/3 flex gap-2 items-center'>
-        <input id="monday${ind}" type="checkbox" value="" class="h-8 w-8 m-1 rounded-full">
-        <input id="tuesday${ind}" type="checkbox" value="" class="h-8 w-8 m-1 rounded-full">
-        <input id="wednesday${ind}" type="checkbox" value="" class="h-8 w-8 m-1 rounded-full">
-        <input id="thursday${ind}" type="checkbox" value="" class="h-8 w-8 m-1 rounded-full">
-        <input id="friday${ind}" type="checkbox" value="" class="h-8 w-8 m-1 rounded-full">
-        <input id="saturday${ind}" type="checkbox" value="" class="h-8 w-8 m-1 rounded-full">
-        <input id="sunday${ind}" type="checkbox" value="" class="h-8 w-8 m-1 rounded-full">
+        <input id="monday${ind}" type="checkbox" value="monday" ${list.days.monday ? 'checked' : ''} onclick='toggleDay(${ind})' class="h-8 w-8 m-1 ml-4 pl-2 rounded-full ">
+        <input id="tuesday${ind}" ${list.days.tuesday ? 'checked' : ''} onclick='toggleDay(${ind})' type="checkbox" value="" class="h-8 w-8 m-1 rounded-full">
+        <input id="wednesday${ind}" ${list.days.wednesday ? 'checked' : ''} onclick='toggleDay(${ind})' type="checkbox" value="" class="h-8 w-8 m-1 rounded-full">
+        <input id="thursday${ind}" ${list.days.thursday ? 'checked' : ''} onclick='toggleDay(${ind})' type="checkbox" value="" class="h-8 w-8 m-1 rounded-full">
+        <input id="friday${ind}" ${list.days.friday ? 'checked' : ''} onclick='toggleDay(${ind})' type="checkbox" value="" class="h-8 w-8 m-1 rounded-full ml-2">
+        <input id="saturday${ind}" ${list.days.saturday ? 'checked' : ''} onclick='toggleDay(${ind})' type="checkbox" value="" class="h-8 w-8 m-1 rounded-full">
+        <input id="sunday${ind}" ${list.days.sunday ? 'checked' : ''} onclick='toggleDay(${ind})' type="checkbox" value="" class="h-8 w-8 m-1 rounded-full">
     </div>    
    </div>`
   })
+
   listBox.innerHTML = htmlCode
+
+  todoArray.forEach((list, ind) => {
+    Object.values(dayDictionary).forEach((day) => {
+      const checkbox = document.getElementById(`${day}${ind}`)
+      checkbox.addEventListener('change', () => toggleDay(day, ind))
+    })
+  })
+}
+function toggleDay(day, ind) {
+  if (todoArray) {
+    todoArray[ind].days[day] = !todoArray[ind].days[day]
+    localStorage.setItem('todo', JSON.stringify(todoArray))
+  }
 }
 
 addTaskButton.addEventListener('click', (e) => {
   e.preventDefault()
   let todo = localStorage.getItem('todo')
+  // validation for empty Add Thing input
+  if (habit.value === '') {
+    alert('Habit cannot be empty')
+    return
+  }
   console.log(JSON.parse(todo))
   let parsedTodo = JSON.parse(todo)
 
-  // if (todo === null) {
-  //   todoArray = []
-  // } else {
-  //   todoArray = JSON.parse(todo)
-  // }
+  if (todo === null) {
+    todoArray = []
+  } else {
+    todoArray = parsedTodo
+  }
 
   const newTodo = {
     habit: habit.value,
@@ -84,8 +93,8 @@ addTaskButton.addEventListener('click', (e) => {
       saturday: false,
       sunday: false,
     },
-    currentStreak: 0, // 0 - 7
-    totalStreak: 0, // count of multiple current streaks
+    currentStreak: 0, // future: 0 - 7
+    totalStreak: 0, // future: account of multiple current streaks
   }
 
   // todoArray.push(habit.value)
@@ -107,7 +116,7 @@ function edit(ind) {
   saveInd.value = ind
   let todo = localStorage.getItem('todo')
   todoArray = JSON.parse(todo)
-  habit.value = todoArray[ind]
+  habit.value = todoArray[ind].habit
   addTaskButton.style.display = 'none'
   saveTaskButton.style.display = 'block'
 }
@@ -116,7 +125,7 @@ saveTaskButton.addEventListener('click', () => {
   let todo = localStorage.getItem('todo')
   todoArray = JSON.parse(todo)
   let id = saveInd.value
-  todoArray[id] = habit.value
+  todoArray[id].habit = habit.value
   addTaskButton.style.display = 'block'
   saveTaskButton.style.display = 'none'
   habit.value = ''
@@ -126,16 +135,16 @@ saveTaskButton.addEventListener('click', () => {
 
 /* -- Glow effect -- */
 
-// const blob = document.getElementById('blob')
+const blob = document.getElementById('blob')
 
-// window.onpointermove = (event) => {
-//   const { clientX, clientY } = event
+window.onpointermove = (event) => {
+  const { clientX, clientY } = event
 
-//   blob.animate(
-//     {
-//       left: `${clientX}px`,
-//       top: `${clientY}px`,
-//     },
-//     { duration: 3000, fill: 'forwards' }
-//   )
-// }
+  blob.animate(
+    {
+      left: `${clientX}px`,
+      top: `${clientY}px`,
+    },
+    { duration: 3000, fill: 'forwards' }
+  )
+}

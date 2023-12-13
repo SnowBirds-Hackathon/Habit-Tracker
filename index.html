@@ -5,37 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Did I Do The Thing</title>
     <link href="/dist/output.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2bca696cf0.js" crossorigin="anonymous"></script>
   </head>
-  <body class="min-w-[768px] class="bg-fixed style="background-image: url(https://mywandergirllife.files.wordpress.com/2017/07/lis-fb.gif)">
+  <body class="min-w-[768px]  bg-repeat-x bg-cover"
+    style="background-image: url(https://mywandergirllife.files.wordpress.com/2017/07/lis-fb.gif)">
 
-      
-
-      <section class="header">
-        <div class="flex flex-row justify-between p-4 w-full space-x-40">
-          <div class="outline-4 border-2 border-double rounded-lg h-1/2">
-            <img class="w-15 h-10" src="/assets/snowbird-logo.png" alt="snowbird-logo">
-          </div>
-          <div class="p-2 cursor-pointer border-2 border-double rounded-lg" id="hamburger-icon">
-            <div class="w-6 h-0.5 bg-gray-800 my-1 transition"></div>
-            <div class="w-6 h-0.5 bg-gray-800 my-1 transition"></div>
-            <div class="w-6 h-0.5 bg-gray-800 my-1 transition"></div>
-          </div>
+    <section class="header">
+      <div class="flex flex-row justify-between p-4 w-full space-x-40 bg-transparent">
+        <div class=" w-40  border-double rounded-lg h-1/2">
+          <img class="" src="/assets/snowbird-logo.png" alt="snowbird-logo">
         </div>
-      </section>
+        <div class=" h-1/2 p-2 cursor-pointer border-2 border-double rounded-lg" id="gitHub">
+          <a href="https://github.com/SnowBirds-Hackaton/SnowBirds-Habit-Tracker">
+            <button class=" fa-6x fa-brands fa-github "></button>
+          </a>
+
+
+        </div>
+      </div>
+    </section>
     </div>
+
     <!-- blob -->
-    <!-- todo id needed to make blob or something work -->
-    <!-- <div class=" bg-white absolute rounded-[50%] left-[50%] top-[75%] translate-x-[-50%] translate-y-[-50%] bg-gradient-to-r from-cyan-200
-      to-purple-600 w-[192px] h-[280px] aspect-square opacity-30 z-0 animate-rotate-blob">
-    </div> -->
+
+    <div class=" bg-white absolute rounded-[50%] left-[50%] top-[75%] translate-x-[-50%] translate-y-[-50%]
+            bg-gradient-to-r from-cyan-200 to-purple-600 w-[192px] h-[280px] aspect-square opacity-30 z-0
+            animate-rotate-blob blur-2xl pointer-events-none" id="blob">
+    </div>
 
     <div class="flex justify-center rounded-lg bg-transparent">
 
       <div class="border-2 w-120 h-120 rounded-lg text-center text-2xl font-extrabold uppercase drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] 
       hover:underline italic gradient-text bg-gradient-to-r from-cyan-200 to-purple-600">
-        <p
-          class="border-2 w-80 h-90 rounded-lg text-center font-codedex text-2xl font-extrabold uppercase drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] 
-          hover:underline italic gradient-text ">
+        <p class="border-2 w-80 h-90 rounded-lg text-center font-codedex text-4xl font-extrabold uppercase drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] 
+          hover:underline italic gradient-text font-excalidraw">
           Did I do the thing?
         </p>
       </div>
@@ -44,36 +47,36 @@
     <!-- Container for the Habit Tracker -->
 
     <!--flex flex-row justify-between p-4 w-full space-x-40"-->
-    <div class="mx-auto max-w-7xl px-4 flex justify-center">
-      <div class="h-100 w-4/5 flex justify-center bg-teal-lightest font-codedex">
-        <div id='things-container' class="bg-white mx-auto rounded shadow p-6 m-4 w-full">
+    <div class=" drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] mx-auto max-w-6xl px-4 flex justify-center">
+      <div class="h-100 w-3/5 flex justify-center bg-teal-lightest font-excalidraw">
+        <div id='things-container'
+          class="bg-gradient-to-r border-2  from-cyan-200 to-purple-600 mx-auto rounded-lg shadow p-2 m-4 w-full">
           <div class="mb-4">
-            <div id="header" class="flex items-center bg-gradient-to-r from-cyan-200 to-purple-600 ">
+            <div id="header" class="flex items-center bg-gradient-to-r from-cyan-200 to-purple-600">
               <h1
-                class="w-1/3 font-codedex text-4xl text-indigo-600 font-medium mb-2 shadow appearance-none border rounded text-grey-darker">
+                class="font-excalidraw w-1/3 bg-gradient-to-r from-purple-600 to-cyan-300 font-codedex text-4xl text-black font-medium mb-2 shadow appearance-none border rounded text-grey-darker">
                 The Things
               </h1>
-              <div class="w-2/3 flex gap-x-4 items-center pl-4">
-                <h3 class="text-lg font-bold">Mon</h3>
-                <h3 class="text-lg font-bold">Tue</h3>
-                <h3 class="text-lg font-bold">Wed</h3>
-                <h3 class="text-lg font-bold">Thu</h3>
-                <h3 class="text-lg font-bold">Fri</h3>
-                <h3 class="text-lg font-bold">Sat</h3>
-                <h3 class="text-lg font-bold">Sun</h3>
+              <div class="w-2/3 flex gap-x-4 items-center pl-4 ml-5">
+                <h3 class="text-lg font-excalidraw">Mon</h3>
+                <h3 class="text-lg font-excalidraw">Tue</h3>
+                <h3 class="text-lg font-excalidraw">Wed</h3>
+                <h3 class="text-lg font-excalidraw">Thu</h3>
+                <h3 class="text-lg font-excalidraw">Fri</h3>
+                <h3 class="text-lg font-excalidraw">Sat</h3>
+                <h3 class="text-lg font-excalidraw">Sun</h3>
               </div>
             </div>
             <div class="overflow-y-auto max-h-80">
               <div id="listBox"> </div>
             </div>
-            <div class="flex  mt-4">
+            <div class="flex mt-4">
               <!-- input box for habits -->
-              <div class="block w-1/3 shadow appearance-none flex justify-between border rounded text-grey-darker">
-                <input class="" name="text" id="text" size="30" placeholder="Add Thing" />
+              <div class=" w-1/3 shadow appearance-none flex justify-between border rounded text-grey-darker bg-white">
+                <input class="font-excalidraw text-lg pl-2" name="text" id="text" placeholder="Add Thing" />
                 <input type="hidden" id="saveIndex" />
-                <button class="h-8 w-8 m-1 rounded-full border rounded" id="add-task-btn">+</button>
-                <button class="h-8 w-8 m-1 rounded-full border rounded" style="display: none"
-                  id="save-todo-btn">Edit</button>
+                <button class="h-8 w-8 m-1 fa-solid fa-mug-hot -ml-5 bg-opacity-0" id="add-task-btn"></button>
+                <button class="h-8 w-8 m-1 border rounded" style="display: none" id="save-todo-btn">Edit</button>
               </div>
 
             </div>
@@ -81,7 +84,32 @@
         </div>
       </div>
     </div>
-    <!--<section class="Filter">
+
+    <section id=footer>
+
+<div>
+      <footer class=" absolute items-center justify-center bottom-0 bg-0 rounded-lg shadow ">
+
+        <span class="font-excalidraw self-center text-2xl font-semibold whitespace-nowrap dark:text-black">SnowBirds|
+          ©CodeDex's
+          SnowBirds Hackaton Team
+          2023</span>
+        </a>
+
+
+        </ul>
+        </div>
+
+
+      </footer>
+
+
+    </section>
+
+    <footer>
+
+
+      <!--<section class="Filter">
       <div class="flex flex-auto justify-center p-4 w-full space-x-10 border-2 rounded-lg">
 
         <div class="border-2 rounded-lg p-1 h-1/2 bg-red-500">
@@ -99,7 +127,7 @@
       </div>
     </section>-->
 
-    <!-- <div class="relative">
+      <!-- <div class="relative">
       <div class="absolute inset-0 flex items-center" aria-hidden="true">
         <div class="w-full border-t border-gray-300"></div>
       </div>
@@ -108,6 +136,6 @@
       </div>
     </div> -->
 
-    <script src="main.js"></script>
+      <script src="main.js"></script>
   </body>
 </html>
