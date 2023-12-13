@@ -17,14 +17,15 @@ function displayTodo() {
 
   let htmlCode = ''
   todoArray.forEach((list, ind) => {
-    htmlCode += `<div class='flex mb-4 items-center'>
+    htmlCode += `<div class='flex mb-4 items-center gap-5'>
     <div class='w-1/3 border border-gray-900 flex rounded-full'>
         <p class='w-full text-grey-darkest' >${list}</p>
         <button onclick='edit(${ind})' class='border border-green-500 h-8 w-8'>Edit</button>
         <button onclick='deleteTodo(${ind})' class='border border-red-500 h-8 w-8'>X</button>
     </div>
 
-    <div class='w-2/3'><input id="monday${ind}" type="checkbox" value="" class="h-8 w-8 m-1 rounded-full">
+    <div class='w-2/3 gap-1'>
+        <input id="monday${ind}" type="checkbox" value="" class="h-8 w-8 m-1 rounded-full">
         <input id="tuesday${ind}" type="checkbox" value="" class="h-8 w-8 m-1 rounded-full">
         <input id="wednesday${ind}" type="checkbox" value="" class="h-8 w-8 m-1 rounded-full">
         <input id="thursday${ind}" type="checkbox" value="" class="h-8 w-8 m-1 rounded-full">
