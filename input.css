@@ -10,7 +10,7 @@
 @tailwind utilities;
 
 body {
-  background: radial-gradient(ellipse at bottom, #547eaf 0%, #090a0f 100%);
+  background: radial-gradient(ellipse at bottom, #002d62 0%, #090a0f 100%);
   height: 100vh;
   overflow: hidden;
 }
