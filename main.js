@@ -24,18 +24,25 @@ displayTodo()
 
 function displayTodo() {
   let todo = localStorage.getItem('todo')
-  console.log(todo)
+  let parsedTodo = JSON.parse(todo)
+  console.log(parsedTodo)
+  for (let i = 0; i < parsedTodo.length; i++) {
+    console.log(parsedTodo[i])
+  }
+
   if (todo === null) {
     todoArray = []
   } else {
-    todoArray = JSON.parse(todo)
+    todoArray = parsedTodo
   }
 
   let htmlCode = ''
+
   todoArray.forEach((list, ind) => {
+    console.log('list: ', list, 'index: ', ind)
     htmlCode += `<div class='flex mb-4 items-center gap-5'>
     <div class='w-1/3 flex items-center justify-start gap-2 border border-grey-500 rounded-full'>
-        <p class='w-full habit-grey-darkest m-1 line-clamp-1 overflow-hidden dark:md:hover:bg-fuchsia-600' >${list}</p>
+        <p class='w-full habit-grey-darkest m-1 line-clamp-1 overflow-hidden bg-sky-500 hover:bg-sky-700' >${list.habit}</p>
         <button onclick='edit(${ind})' class='border border-green-500 h-8 w-8 '>Edit</button>
         <button onclick='deleteTodo(${ind})' class='border border-red-500 h-8 w-8 mr-2 '>X</button>
     </div>
@@ -49,7 +56,6 @@ function displayTodo() {
         <input id="saturday${ind}" type="checkbox" value="" class="h-8 w-8 m-1 rounded-full">
         <input id="sunday${ind}" type="checkbox" value="" class="h-8 w-8 m-1 rounded-full">
     </div>    
-      
    </div>`
   })
   listBox.innerHTML = htmlCode
@@ -78,8 +84,8 @@ addTaskButton.addEventListener('click', (e) => {
       saturday: false,
       sunday: false,
     },
-    currentStreak: 0,
-    lastDate: null,
+    currentStreak: 0, // 0 - 7
+    totalStreak: 0, // count of multiple current streaks
   }
 
   // todoArray.push(habit.value)
