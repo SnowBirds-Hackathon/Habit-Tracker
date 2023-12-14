@@ -1,2 +1,38 @@
 # SnowBirds-Habit-Tracker
-Codedex's Hackathon (Snowbirds) Habit Tracker
+Codedex's 24 hour  Hackathon (Snowbirds) Habit Tracker
+
+This is a habit tracking wepbage that utilizes localstorage. It was built using vanilla JS framework alonside Tailwind CSS framework and HTML
+Project Link: https://neon-bubblegum-e6b203.netlify.app
+![image](https://github.com/SnowBirds-Hackaton/SnowBirds-Habit-Tracker/assets/102891262/77189122-bea6-4115-af9a-93f0063625ba)
+
+How It's Made:
+
+Tech Used: VS CODE (Live Colaboration) HTML, JS, CSS, Trello, Excalidraw, Vanilla JS framwork and Tailwind CSS Framework
+
+We created a flowchart to visualize how the website was going to look like, we included basic functionalities we would want to implement, as well as some other ideas we might look into if we have time to implement.
+FlowChart: ![image](https://github.com/SnowBirds-Hackaton/SnowBirds-Habit-Tracker/assets/102891262/d87d3891-cc54-4826-8b3f-c259f56c8c34)
+The planning stage helped us in the implementation stage because we were able to work quickly on what we needed. We knew what we had to create and therefore we spent less time thinking of what to implement and spent more time problem solving. Along the way we made some adjustments whenever we found something that could work instead of what we originally intended.  we used discord as a form of communication and we delegated tasks based on the issues we ran into. The team was able to complement each other in areas that each team member lacked.
+
+
+Issue we ran Into and plan on finding solutions to
+
+- We imitially wanted to make a blur background with a blob on the webpage, thius proved difficult because it was all  our first time participating in a hackathon and we didn't have a lot of tecnical arsenal and the time to fully research how to implement it.
+- 
+- Local Storage persistence: After the completion of the design stage, we needed to work on the backend side. We chose to use local storage over User Authentication because we all agreed that for time sake it would be quicker to store the habits on the user's local device. At first we weren't able to make the checkmarks persits when the page was reloaded but thankfully, Chris came up with a solution and we got that functionality working.
+- 
+- We wanted to implement a streak counter with a fire emoji that turns bright orange as the streak grows, we were unable to complete the implementation as we ran out of time.
+
+
+
+Lessons Learned
+- Planning your project saves a lot of time
+- Asking for help is important
+- Testing things out in your personal sand box is very useful so as to not break the main project
+- There's always a solution or an alternate approach to your proposal
+- Taking breaks helps to refresh your mental function
+- Sleep is Important
+
+
+
+
+
