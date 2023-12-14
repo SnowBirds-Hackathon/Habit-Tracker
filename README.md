@@ -8,7 +8,7 @@ Project Link: https://neon-bubblegum-e6b203.netlify.app
 
 
 
-How It's Made:
+## How It's Made:
 
 Tech Used: VS CODE (Live Collaboration) HTML, JS, CSS, Trello, Excalidraw, Vanilla JS framework and Tailwind CSS Framework
 
@@ -17,7 +17,7 @@ FlowChart: ![image](https://github.com/SnowBirds-Hackaton/SnowBirds-Habit-Tracke
 The planning stage helped us in the implementation stage because we were able to work quickly on what we needed. We knew what we had to create and therefore we spent less time thinking of what to implement and more time problem-solving. Along the way, we made some adjustments whenever we found something that could work instead of what we originally intended.  we used Discord as a form of communication and we delegated tasks based on the issues we ran into. The team was able to complement each other in areas that each team member lacked.
 
 
-Issues we ran Into and plan on finding solutions to
+## Issues we ran Into and plan on finding solutions to
 
 - We initially wanted to make a blurred background with a blob on the webpage, which proved difficult because it was our first time participating in a hackathon and we didn't have a lot of technical arsenal and the time to fully research how to implement it.
  
