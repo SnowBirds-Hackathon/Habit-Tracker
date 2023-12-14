@@ -27,7 +27,7 @@ Issues we ran Into and plan on finding solutions to
 
 
 
-Lessons Learned
+## Lessons Learned
 - Planning your project saves a lot of time
 - Asking for help is important
 - Testing things out in your personal sandbox is very useful to not break the main project
