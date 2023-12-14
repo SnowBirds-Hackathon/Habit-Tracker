@@ -17,9 +17,9 @@ The planning stage helped us in the implementation stage because we were able to
 Issues we ran Into and plan on finding solutions to
 
 - We initially wanted to make a blurred background with a blob on the webpage, which proved difficult because it was our first time participating in a hackathon and we didn't have a lot of technical arsenal and the time to fully research how to implement it.
-- 
+ 
 - Local Storage persistence: After the completion of the design stage, we needed to work on the backend side. We chose to use local storage over User Authentication because we all agreed that for time's sake it would be quicker to store the habits on the user's local device. At first, we weren't able to make the checkmarks persist when the page was reloaded but thankfully, Chris came up with a solution and we got that functionality working.
-- 
+  
 - We wanted to implement a streak counter with a fire emoji that turns bright orange as the streak grows, but we were unable to complete the implementation as we ran out of time.
 
 
