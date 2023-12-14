@@ -3,7 +3,9 @@ Codedex's 24-hour Hackathon (Snowbirds) Habit Tracker
 
 This is a habit-tracking garbage that utilizes local storage. It was built using vanilla JS framework alongside Tailwind CSS framework and HTML
 Project Link: https://neon-bubblegum-e6b203.netlify.app
-![image](https://github.com/SnowBirds-Hackaton/SnowBirds-Habit-Tracker/assets/102891262/b0a0ec06-a008-470a-8bc3-a52fd3baf0e2)
+![image](https://github.com/SnowBirds-Hackaton/SnowBirds-Habit-Tracker/assets/102891262/0448738f-5ace-4f37-9847-15764d73b05a)
+
+
 
 
 How It's Made:
