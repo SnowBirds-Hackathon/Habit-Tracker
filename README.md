@@ -1,4 +1,4 @@
-# SnowBirds-Habit-Tracker
+# Habit-Tracker
 Codedex's 24-hour Hackathon (Snowbirds) Habit Tracker
 
 This is a habit-tracking website that utilizes local storage. It was built using vanilla JS framework alongside Tailwind CSS framework and HTML
